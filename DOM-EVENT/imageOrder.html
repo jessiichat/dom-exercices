@@ -26,11 +26,32 @@
       </div>
       <script>
         //TODO
+        const allButton = document.querySelector('#all');
+        const lists = document.querySelectorAll('ul');
         //1 - Séléctionner l'éléments HTML 'bouton paramoteur' avec querySelector et le mettre dans une variable.
+        const paramoteurButton =  document.querySelector('#paramoteur');
+        const paramoteurs = document.querySelector('.paramoteur');
         //2 - Séléctionner la liste ul 'multiaxe' avec querySelector et la mettre dans une variable.
+        const multiaxeButton =  document.querySelector('#multiaxe');
+        const multiaxes = document.querySelector('.multiaxe');
+
+        allButton.addEventListener('click', () => {
+          for (const list of lists){
+            list.classList.toggle('hide');
+          }
+        });
+        
         //3 - Placer un 'micro' avec un addEventListener (click) sur l'élément HTML 'bouton paramoteur'
-        //4 - Dans le callback de l'addEventListener, faire disparaitre le liste 'multiaxe' à l'aide de ce code: multiaxe.style.display = 'none'; Tester cette instruction dans la console du navigateur.
-        //5 - Placer un 'debugger' dans le callback en cas de problème.
+        paramoteurButton.addEventListener('click', () => {
+          //multiaxes.style.display = "none";
+          paramoteurs.classList.toggle('hide');
+        });
+
+        multiaxeButton.addEventListener('click', () => {
+          //paramoteurs.style.display = "none";
+          multiaxes.classList.toggle('hide');
+        });
+
       </script>
   </body>
 </html>
