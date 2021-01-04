@@ -14,8 +14,25 @@
         <br>(voir bannière.html)
       </p>
     </div>
+    <div class="newsletter">
+      <button class="close">X</button>
+      <h2>Inscrivez-vous à notre newsletter</h2>
+      <input type="text" id="email" placeholder="Ecrivez votre email">
+      <button>Envoyer</button>
+    </div>
     <script>
       //TODO
+      // Faire apparaitre une banniere en bas de page 5 secondes après le chargement de la page
+      const newsletter = document.querySelector('.newsletter');
+      setTimeout(() => {
+        newsletter.style.display = "block";
+      }, 5000);
+      
+      // Fermeture de la bannière en cliquant sur le bouton close
+      const closedButton = document.querySelector('.close');
+      closedButton.addEventListener('click', () => {
+        newsletter.style.display = "none";
+      });
     </script>
   </body>
 </html>
