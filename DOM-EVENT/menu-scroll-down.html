@@ -19,6 +19,18 @@
   </div>
     <script>
     //TODO
+    // Selectioner le container du menu
+    const menu = document.querySelector('#menu');
+    let positionYScrolled = window.scrollY;
+    //console.log(positionYScrolled);
+
+    // Ajout d'un micro sur la fenetre
+    window.addEventListener('scroll', () => {
+      // Dès qu'on dépasse 70px au scroll down, le menu reste fixer en haut
+      if (positionYScrolled > 70){
+        menu.classList.add('fixed-position');
+      }
+    });
     </script>
   </body>
 </html>
