@@ -16,6 +16,18 @@
       </div>
     <script>
        //TODO
+       // Sélectionner le pointeur
+       const image = document.querySelector('img');
+
+       // Ajouter une ombre au survol
+       image.addEventListener('mouseover', () => {
+         image.classList.toggle('shadow');
+       });
+
+       // Arrondire les bordures au click
+       image.addEventListener('click', () => {
+         image.classList.toggle('round-photo');
+       })
     </script>
   </body>
 </html>
