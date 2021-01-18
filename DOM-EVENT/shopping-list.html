@@ -14,13 +14,51 @@
       </p>
     </div>
       <form action="" id="formulaire" style="text-align: center;">
-        <input type="text" placeholder="ex: poire" id="userInput">
+        <input type="text" placeholder="ex: poire" id="userInput" value="">
         <button id="bouton">Envoyer</button>
         <button id="Supprime">Supprimer ma liste</button>
       </form>
-    <div id="maListeDeCourse"></div>
+    <div id="maListeDeCourse">
+      <ul></ul>
+    </div>
     <script>
       //TODO
+      // Récupérer le contenu du l'input
+      let userInput = document.querySelector('#userInput');
+      
+
+      // Définition des boutons
+      const submitButton = document.querySelector('#bouton');
+      const deleteButton = document.querySelector('#Supprime');
+
+      // Définition du container de la liste
+      const shoppingList = document.querySelector('#maListeDeCourse');
+      
+      // Insertion d'une balise ul
+      const listContent = document.querySelector('#maListeDeCourse > ul');
+
+      // Au clic sur le bouton envoyer, 
+      submitButton.addEventListener('click', (event) => {
+        // Evite le rechargement de la page
+        event.preventDefault();
+
+        // Verification du contenu
+        //console.log(userInput.value);
+
+        // Afficher le contenu dans #maListeDeCourse
+        // Créer un li pour stocker le résultat
+        listContent.insertAdjacentHTML('afterbegin', `<li>${userInput.value}</li>`);
+      
+        // Vider le value
+        userInput.value = "";
+      });
+
+
+      // Au clic sur le bouton supprimer ma liste, 
+      deleteButton.addEventListener('click', (event) => {
+        alert('coucou');
+      });
+      
     </script>
   </body>
 </html>

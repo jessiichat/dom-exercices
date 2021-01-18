@@ -9,8 +9,30 @@
     <br>(voir type-effect.html)
     </h2>
     <h1>avengers</h1>
+    <p></p>
   <script>
     //TODO
+    const titleContainer = document.querySelector('p');
+    let title = document.querySelector('h1').textContent;
+    const word = title.split("");
+
+    // Parcourir le tableau
+    // Afficher les lettres une à une
+    // for (const letter of word){
+    //   setTimeout(() => {
+    //     trypeWriter(letter);
+    //   }, 5000);
+    // }
+
+    word.forEach((letter, i) => {
+      setTimeout(() => {
+        trypeWriter(letter);
+      }, i * 1000);
+    })
+
+    function trypeWriter(letter){
+      titleContainer.insertAdjacentHTML('beforeend', `<div class="letter">${letter}</div>`);
+    }
   </script>
   </body>
 </html>
