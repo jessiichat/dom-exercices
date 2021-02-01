@@ -29,6 +29,8 @@
       // Dès qu'on dépasse 70px au scroll down, le menu reste fixer en haut
       if (positionYScrolled > 70){
         menu.classList.add('fixed-position');
+      } else {
+        menu.classList.remove('fixed-position');
       }
     });
     </script>

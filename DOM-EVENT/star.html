@@ -23,6 +23,26 @@
   <div class="test"></div>
   <script>
       //TODO
+      const stars = document.querySelectorAll('i');
+      
+      // On souhaite sélectionner étoile par étoile
+      // On pose un micro sur chaque étoile
+      for(i = 0; i < stars.length; i++){
+        stars[i].addEventListener('click', () => {
+          // On souhaite récupérer i ou bien l'index du tableau
+          //console.log(i);
+
+          // si j est inférieur ou égale à i, on colore les premières étoiles jusqu'à celle cliquée en jaune
+          for (let j = 0; j <= i; j++){
+            star[j].classList.add('star-checked');
+          }
+
+          // si k est égale à i + 1, on colore les étoiles restantes en gris
+          for (let k = i + 1 ; k <= stars.length; k++){
+            star[k].classList.add('star-unchecked');
+          }
+        });
+      }
   </script>
 </body>
 </html>

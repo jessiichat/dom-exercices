@@ -21,6 +21,45 @@
     <div id="error-message"></div>
     <script>
     //TODO
+    const login = document.querySelector('#login');
+    const password = document.querySelector('#pwd');
+    const submit = document.querySelector('#button');
+    const errorMessage = document.querySelector('#error-message');
+    const checkbox = document.querySelector('#checkbox');
+
+    submit.addEventListener('click', (event) => {
+      // On réinitialise le comportement du bouton submit
+      event.preventDefault();
+      // On récupère la valeur de nos input
+      console.log(login.value);
+      console.log(password.value);
+
+      // Si le prénom fait plus de 15 caractères ou que le mot de passe fait moins de 8 caractères
+      if(login.value.length > 15 || password.value.length < 8){
+        login.classList.add('bad-password');
+        errorMessage.innerHTML = "Votre login ou votre mot de passe n'est pas valide";
+      }
+    });
+
+    checkbox.addEventListener('click', (event) => {
+      if(event.currentTarget.checked){
+        password.setAttribute('type', 'text');
+      } else {
+        password.setAttribute('type', 'password');
+      }
+    });
+
+    // l'évenement input prendre en compte l'effacement des caractères
+    // contrairement à keypress
+    password.addEventListener('input', () => {
+      if (password.value.length < 8){
+        login.classList.add('bad-password');
+        login.classList.remove('good-password');
+      } else {
+        login.classList.add('good-password');
+        login.classList.remove('bad-password');
+      }
+    })
     </script>
   </body>
 </html>

@@ -26,7 +26,6 @@
       // Récupérer le contenu du l'input
       let userInput = document.querySelector('#userInput');
       
-
       // Définition des boutons
       const submitButton = document.querySelector('#bouton');
       const deleteButton = document.querySelector('#Supprime');
@@ -39,7 +38,7 @@
 
       // Au clic sur le bouton envoyer, 
       submitButton.addEventListener('click', (event) => {
-        // Evite le rechargement de la page
+        // Evite le rechargement de la page et enlève le comportement par défaut du bouton 
         event.preventDefault();
 
         // Verification du contenu
@@ -56,7 +55,9 @@
 
       // Au clic sur le bouton supprimer ma liste, 
       deleteButton.addEventListener('click', (event) => {
-        alert('coucou');
+        event.preventDefault();
+
+        listContent.remove();
       });
       
     </script>

@@ -4,14 +4,80 @@
   <meta charset="UTF-8">
   <title>Slider</title>
   <link rel="stylesheet" href="./assets/stylesheet/css/slider.css">
+  <script src="https://kit.fontawesome.com/b9b7c34fcf.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>Vous trouverez dans le dossier '/assets/images/slider', 4 photos. Codez un slider
   <br>(voir slider.html)
   </h1>
   <img id="slide" width="400" height="300">
+  <div>
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-right"></i>
+  </div>
   <script>
     //TODO
+    // Selection l'image
+    // let image = document.querySelector('img');
+    // let imageSrc = document.querySelector('img').src;
+    
+    // // Selection des boutons
+    // const nextButton = document.querySelector(".fa-arrow-right");
+    // const previousButton = document.querySelector(".fa-arrow-left");
+  
+    // // Définir l'attribut src de la balise img
+    // image.setAttribute("src", "./assets/images/slider/ulm1.jpg");
+
+    // // Création d'un tableau pour stocker les images
+    // var slides = [
+    //   {image : "./assets/images/slider/ulm1.jpg"},
+    //   {image : "./assets/images/slider/ulm2.jpg"},
+    //   {image : "./assets/images/slider/ulm3.jpg"}
+    // ];
+
+    // Première image retournée
+    let currentImage = 0;
+
+    // Retourner la chaine de caractère du paramètre image de l'objet
+    // for (const slide in slides){
+    //   var url = console.log(`${slides[slide]}`);
+    // }
+
+    //image.setAttribute("src", url);
+
+    /*
+    * CORRECTIONS
+    */
+
+    const imageOne = "./assets/images/slider/ulm1.jpg";
+    const imageTwo = "./assets/images/slider/ulm2.jpg";
+    const imageThree = "./assets/images/slider/ulm3.jpg";
+
+    const images = [imageOne, imageTwo, imageThree];
+    const slider = document.querySelector('img');
+    
+    const nextSlide = () => {
+      slider.src = images[currentImage];
+      currentImage++;
+
+      setTimeout(nextSlide, 3000);
+
+      if (currentImage >= images.length){
+        currentImage = 0;
+      }
+    }; 
+    
+    // Appel de la fonction nextSlide
+    nextSlide();
+
+    // Aller à l'image suivante en appuyant sur la flèche de droite
+    nextButton.addEventListener('click', () => {
+      alert("coucou +");
+    });
+
+    previousButton.addEventListener('click', () => {
+      alert("coucou -");
+    });
   </script>
 </body>
 </html>
