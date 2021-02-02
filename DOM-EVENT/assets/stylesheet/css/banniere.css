@@ -1,0 +1,17 @@
+.newsletter {
+    display: none;
+    background-color: cornflowerblue;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    position: fixed;
+    bottom : 0;
+    left : 0;
+}
+
+.close{
+    background-color: red;
+    color: white;
+    position: fixed;
+    right: 50px;
+}
